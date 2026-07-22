@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Ujjawal Srivastava, M.Tech Materials Science at IIT Bombay, focused on semiconductor manufacturing, process engineering, yield engineering, SPC, DOE, and manufacturing analytics." />
+  <meta name="keywords" content="Semiconductor, Process Engineer, Yield Engineer, Materials Science, IIT Bombay, Manufacturing, SPC, DOE, Quality Engineering, Industry 4.0" />
+  <meta name="author" content="Ujjawal Srivastava" />
+  <title>Ujjawal Srivastava | Semiconductor Process Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11182d;
+      --bg-card: rgba(255, 255, 255, 0.075);
+      --bg-card-strong: rgba(255, 255, 255, 0.11);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --muted-2: #94a3b8;
+      --gold: #d6b56d;
+      --gold-soft: rgba(214, 181, 109, 0.18);
+      --blue: #6ea8ff;
+      --green: #50d890;
+      --border: rgba(255, 255, 255, 0.13);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 181, 109, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(110, 168, 255, 0.17), transparent 35%),
+        linear-gradient(145deg, #070b16 0%, #0b1020 45%, #111827 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .premium-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.65;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 11, 22, 0.76);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold), #fff0ba);
+      color: #101827;
+      box-shadow: 0 14px 40px rgba(214, 181, 109, 0.24);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid rgba(214, 181, 109, 0.38);
+      border-radius: 999px;
+      color: var(--gold);
+      background: var(--gold-soft);
+    }
+
+    .hero {
+      padding: 92px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-panel {
+      padding: 44px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045)),
+        radial-gradient(circle at top right, rgba(214,181,109,0.16), transparent 38%);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      right: -90px;
+      bottom: -120px;
+      background: rgba(110, 168, 255, 0.14);
+      filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      background: var(--gold-soft);
+      border: 1px solid rgba(214, 181, 109, 0.26);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(80, 216, 144, 0.12);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .hero-title-accent {
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-weight: 800;
+      transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #fff0ba);
+      color: #111827;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.07);
+      color: var(--text);
+    }
+
+    .profile-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-top {
+      padding: 32px;
+      background:
+        radial-gradient(circle at top left, rgba(214,181,109,0.24), transparent 42%),
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.045));
+    }
+
+    .avatar {
+      width: 132px;
+      height: 132px;
+      border-radius: 30px;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+      margin-bottom: 22px;
+      border: 2px solid rgba(214, 181, 109, 0.42);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.28);
+    }
+
+    .profile-top h2 {
+      font-size: 1.65rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .profile-top p {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .profile-meta {
+      padding: 28px 32px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+    }
+
+    .meta-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .meta-label {
+      color: var(--muted-2);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .meta-value {
+      color: var(--text);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .section-note {
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat-card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+
+    .stat-number {
+      color: var(--gold);
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .about-card {
+      padding: 34px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.045));
+      box-shadow: var(--shadow);
+    }
+
+    .about-card p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 970px;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.075);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .skill-pill.featured {
+      background: var(--gold-soft);
+      color: var(--gold);
+      border-color: rgba(214, 181, 109, 0.25);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .timeline-card {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      padding: 30px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.2);
+    }
+
+    .timeline-date {
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .timeline-role {
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .timeline-company {
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .timeline-desc {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .achievement-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .achievement-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--muted);
+    }
+
+    .achievement-list li::before {
+      content: "\2726";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      padding: 30px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top right, rgba(214,181,109,0.12), transparent 38%),
+        rgba(255,255,255,0.07);
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .stack span {
+      color: var(--muted);
+      background: rgba(255,255,255,0.075);
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .achievement-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.065);
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .education-card {
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .education-card h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .contact-panel {
+      padding: 44px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(214,181,109,0.22);
+      background:
+        linear-gradient(135deg, rgba(214,181,109,0.18), rgba(110,168,255,0.09)),
+        rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact-panel h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-link {
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-weight: 800;
+    }
+
+    .contact-link span {
+      color: var(--gold);
+    }
+
+    footer {
+      padding: 34px 0 46px;
+      color: var(--muted-2);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .contact-panel,
+      .timeline-card {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid,
+      .achievements-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-shell,
+      nav {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-panel,
+      .profile-top,
+      .profile-meta,
+      .about-card,
+      .timeline-card,
+      .project-card,
+      .contact-panel {
+        padding: 24px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meta-item,
+      .contact-link {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .meta-value {
+        text-align: left;
+      }
+    }
+  
+
+    .avatar-wrap { position: relative; width: 132px; height: 132px; margin-bottom: 22px; }
+    .avatar-wrap .avatar { margin-bottom: 0; position: relative; z-index: 2; background: #11182d; }
+    .avatar-fallback { position: absolute; inset: 0; display: grid; place-items: center; border-radius: 30px; background: linear-gradient(135deg, var(--gold), #fff0ba); color: #111827; font-size: 2.2rem; font-weight: 900; border: 2px solid rgba(214,181,109,.42); }
+    .objective-card { margin-top: 22px; padding: 24px; border-radius: var(--radius-lg); border: 1px solid rgba(214,181,109,.24); background: var(--gold-soft); color: var(--muted); }
+    .credential-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .credential-card { padding:22px; border-radius:var(--radius-lg); border:1px solid var(--border); background:rgba(255,255,255,.065); color:var(--muted); font-weight:700; }
+    @media(max-width:980px){ .credential-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:560px){ .credential-grid{grid-template-columns:1fr;} }
+    @media print {
+      header, .premium-glow, .hero-actions { display:none !important; }
+      body { background:#fff; color:#111; }
+      .hero, section { padding:24px 0; }
+      .hero-panel,.profile-card,.about-card,.timeline-card,.education-card,.achievement-card,.credential-card,.contact-panel,.stat-card { box-shadow:none; background:#fff; border:1px solid #ddd; break-inside:avoid; }
+      .hero-subtitle,.section-note,.about-card p,.timeline-desc,.achievement-list li,.education-card p,.achievement-card,.credential-card,.contact-panel p,.stat-label,.profile-top p { color:#333; }
+      .page-shell { width:94%; }
+    }
+</style>
+</head>
+<body>
+  <div class="premium-glow"></div>
+  <header><nav>
+    <a href="#top" class="brand"><span class="brand-mark">US</span><span>Ujjawal Srivastava</span></a>
+    <div class="nav-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact" class="nav-cta">Connect</a></div>
+  </nav></header>
+  <main id="top">
+    <section class="hero"><div class="page-shell hero-grid">
+      <div class="hero-panel">
+        <div class="eyebrow"><span></span> Open to Semiconductor Manufacturing Opportunities</div>
+        <h1>Building the future of <span class="hero-title-accent">semiconductor manufacturing.</span></h1>
+        <p class="hero-subtitle">Materials Science postgraduate at IIT Bombay specializing in process engineering, yield improvement, manufacturing analytics, and quality engineering.</p>
+        <p class="hero-subtitle">Applying SPC, DOE, materials characterization, and data-driven problem solving to high-precision manufacturing environments.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/ujjawal-srivastava-98b014196" target="_blank" rel="noopener">View LinkedIn</a>
+          <a class="btn btn-secondary" href="mailto:ujjawalsrivastava30@gmail.com">Email Ujjawal</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="profile-top">
+          <div class="avatar-wrap"><div class="avatar-fallback">US</div><img class="avatar" src="profile.jpg" alt="Portrait of Ujjawal Srivastava" onerror="this.style.display='none'"></div>
+          <h2>Ujjawal Srivastava</h2><p>M.Tech Materials Science @ IIT Bombay</p>
+        </div>
+        <div class="profile-meta">
+          <div class="meta-item"><div class="meta-label">Target Roles</div><div class="meta-value">Process / Yield Engineer</div></div>
+          <div class="meta-item"><div class="meta-label">Location</div><div class="meta-value">Mumbai, India</div></div>
+          <div class="meta-item"><div class="meta-label">Focus</div><div class="meta-value">Semiconductor Manufacturing, SPC, DOE</div></div>
+          <div class="meta-item"><div class="meta-label">Current Role</div><div class="meta-value">Company Coordinator, IIT Bombay</div></div>
+        </div>
+      </aside>
+    </div>
+    <div class="page-shell stats-grid">
+      <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Academic degrees in science and materials</div></div>
+      <div class="stat-card"><div class="stat-number">6+</div><div class="stat-label">Core manufacturing and quality focus areas</div></div>
+      <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Thermal analysis techniques: TGA, DSC, DTA</div></div>
+      <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Leadership and teaching roles at IIT Bombay</div></div>
+    </div></section>
+
+    <section id="about"><div class="page-shell"><div class="section-head"><div><div class="section-kicker">Professional Summary</div><h2 class="section-title">Materials science for precision manufacturing.</h2></div><p class="section-note">A process-focused profile combining laboratory discipline, statistical thinking, coordination, and continuous improvement.</p></div>
+      <div class="about-card"><p>Materials Science postgraduate at IIT Bombay with a strong foundation in chemistry, materials characterization, and process-centric engineering. Developing expertise in semiconductor manufacturing, process optimization, yield engineering, statistical process control, manufacturing analytics, and data-driven decision-making for high-volume production environments.</p>
+      <div class="objective-card"><strong>Career Objective:</strong> To contribute to semiconductor manufacturing by applying materials science knowledge, statistical thinking, process optimization, and continuous improvement methodologies in high-precision fabrication environments.</div></div>
+    </div></section>
+
+    <section id="experience"><div class="page-shell"><div class="section-head"><div><div class="section-kicker">Experience</div><h2 class="section-title">Leadership, laboratory operations, and coordination.</h2></div></div><div class="timeline">
+      <article class="timeline-card"><div><div class="timeline-date">June 2026 — Present</div><div class="meta-label">Mumbai, India</div></div><div><h3 class="timeline-role">Company Coordinator</h3><div class="timeline-company">Placement Office, Indian Institute of Technology Bombay</div><p class="timeline-desc">Selected to support industry engagement and placement operations at IIT Bombay.</p><ul class="achievement-list"><li>Coordinate recruiter engagement and placement-related activities.</li><li>Act as liaison between industry recruiters and students.</li><li>Support employer outreach, recruiter relationships, and operational execution.</li><li>Collaborate with student teams to ensure smooth recruitment processes.</li></ul></div></article>
+      <article class="timeline-card"><div><div class="timeline-date">July 2025 — Present</div><div class="meta-label">Mumbai, India</div></div><div><h3 class="timeline-role">Graduate Teaching Assistant</h3><div class="timeline-company">Indian Institute of Technology Bombay</div><p class="timeline-desc">Support thermal characterization laboratories, instrument readiness, experimental workflows, and student learning.</p><ul class="achievement-list"><li>Operate TGA, DSC, and DTA instruments for thermal characterization.</li><li>Perform gold and carbon coating for sample preparation.</li><li>Maintain laboratory SOPs and instrument readiness.</li><li>Support high-throughput experimental workflows.</li><li>Guide students in instrument handling and data interpretation.</li></ul></div></article>
+    </div></div></section>
+
+    <section id="education"><div class="page-shell"><div class="section-head"><div><div class="section-kicker">Education</div><h2 class="section-title">Academic foundation in materials and chemistry.</h2></div></div><div class="education-grid">
+      <article class="education-card"><h3>Indian Institute of Technology Bombay</h3><p>Master of Technology (M.Tech), Materials Science<br>July 2025 — July 2027</p></article>
+      <article class="education-card"><h3>University of Delhi</h3><p>Master of Science, Chemistry<br>November 2022 — June 2024</p></article>
+      <article class="education-card"><h3>University of Allahabad</h3><p>Bachelor of Science, Chemistry<br>July 2019 — June 2022</p></article>
+    </div></div></section>
+
+    <section id="skills"><div class="page-shell"><div class="section-head"><div><div class="section-kicker">Capabilities</div><h2 class="section-title">Technical, laboratory, and professional skills.</h2></div></div>
+      <div class="skills-wrap">
+        <span class="skill-pill featured">Semiconductor Manufacturing</span><span class="skill-pill featured">Process Engineering</span><span class="skill-pill featured">Yield Engineering</span><span class="skill-pill featured">Statistical Process Control</span><span class="skill-pill featured">Design of Experiments</span><span class="skill-pill featured">Manufacturing Analytics</span>
+        <span class="skill-pill">Materials Science</span><span class="skill-pill">Python</span><span class="skill-pill">Data Analysis</span><span class="skill-pill">Quality Engineering</span><span class="skill-pill">Process Optimization</span><span class="skill-pill">Thermal Analysis</span><span class="skill-pill">TGA</span><span class="skill-pill">DSC</span><span class="skill-pill">DTA</span><span class="skill-pill">Gold Coating</span><span class="skill-pill">Carbon Coating</span><span class="skill-pill">Materials Characterization</span><span class="skill-pill">SOP Compliance</span><span class="skill-pill">Problem Solving</span><span class="skill-pill">Leadership</span><span class="skill-pill">Communication</span><span class="skill-pill">Project Coordination</span>
+      </div>
+    </div></section>
+
+    <section id="achievements"><div class="page-shell"><div class="section-head"><div><div class="section-kicker">Credentials & Interests</div><h2 class="section-title">Recognition and industry direction.</h2></div></div>
+      <div class="credential-grid"><div class="credential-card">GATE Qualified</div><div class="credential-card">3rd Annual SemiX Summit 2025</div><div class="credential-card">Governor Award</div><div class="credential-card">National Adventure Programme</div></div>
+      <div class="skills-wrap" style="margin-top:24px"><span class="skill-pill">Wafer Fabrication</span><span class="skill-pill">Yield Improvement</span><span class="skill-pill">Process Stability</span><span class="skill-pill">Industry 4.0</span><span class="skill-pill">Continuous Improvement</span><span class="skill-pill">Quality Analytics</span><span class="skill-pill">Manufacturing Excellence</span></div>
+    </div></section>
+
+    <section id="contact"><div class="page-shell"><div class="contact-panel"><div><div class="section-kicker">Contact</div><h2>Let’s improve process stability and yield.</h2><p>Open to semiconductor process engineering, yield engineering, manufacturing analytics, and quality engineering opportunities.</p></div><div class="contact-links">
+      <a class="contact-link" href="mailto:ujjawalsrivastava30@gmail.com">Email <span>ujjawalsrivastava30@gmail.com</span></a>
+      <a class="contact-link" href="https://www.linkedin.com/in/ujjawal-srivastava-98b014196" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+      <div class="contact-link">Location <span>Mumbai, Maharashtra, India</span></div>
+    </div></div></div></section>
+  </main>
+  <footer>Portfolio powered by Work2Hire</footer>
+</body></html>
